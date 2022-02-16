@@ -44,12 +44,14 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
                 var source = type == ImageSourceType.camera
                     ? ImageSource.camera
                     : ImageSource.gallery;
-                XFile image = await imagePicker.pickImage(
+                XFile? image = await imagePicker.pickImage(
                     source: source,
                     imageQuality: 50,
                     preferredCameraDevice: CameraDevice.front);
                 setState(() {
-                  _image = File(image.path);
+                  if (image != null) {
+                    _image = File(image.path);
+                  }
                 });
               },
               child: Container(
