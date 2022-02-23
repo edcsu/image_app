@@ -20,6 +20,9 @@ class HomePage extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
+              const SizedBox(
+                height: 52,
+              ),
               MaterialButton(
                 color: Colors.blue,
                 child: const Text(
@@ -30,6 +33,9 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   _handleURLButtonPress(context, ImageSourceType.gallery);
                 },
+              ),
+              const SizedBox(
+                height: 52,
               ),
               MaterialButton(
                 color: Colors.blue,
